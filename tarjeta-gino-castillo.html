@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Gino Castillo Petruzzi · Villalba</title>
+<meta name="description" content="Ejecutivo de Ventas Zona Sur · Villalba by Kinstpan">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #060F1A;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .card-wrap {
+    background: #0B1C2C;
+    border-radius: 24px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  }
+
+  /* TOP */
+  .card-top {
+    background: #0D1F33;
+    padding: 32px 28px 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-top::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .card-top::after {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 170px; height: 170px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+
+  /* LOGO */
+  .logo-area {
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ISO BADGE */
+  .iso-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.07);
+    border: 0.5px solid rgba(255,255,255,0.18);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .iso-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #4ABFAA;
+    flex-shrink: 0;
+  }
+
+  /* NOMBRE */
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.1;
+    margin-bottom: 5px;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 1;
+  }
+  .card-role {
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .accent-line {
+    width: 34px; height: 2px;
+    background: #4ABFAA;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* CONFIANZA STRIP */
+  .trust-strip {
+    background: rgba(74,191,170,0.1);
+    border: 0.5px solid rgba(74,191,170,0.28);
+    border-radius: 10px;
+    padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    position: relative;
+    z-index: 1;
+  }
+  .trust-strip i { font-size: 15px; color: #4ABFAA; }
+  .trust-strip span {
+    font-size: 11px;
+    color: rgba(74,191,170,0.95);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* MID */
+  .card-mid {
+    background: #0B1C2C;
+    padding: 16px 28px 18px;
+    border-top: 0.5px solid rgba(255,255,255,0.05);
+    border-bottom: 0.5px solid rgba(255,255,255,0.05);
+  }
+  .territory {
+    font-size: 12px;
+    color: rgba(255,255,255,0.38);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .territory i { font-size: 15px; color: rgba(74,191,170,0.55); }
+
+  /* ACTIONS */
+  .card-actions {
+    background: #071523;
+    padding: 20px 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.04);
+    border: 0.5px solid rgba(255,255,255,0.09);
+    border-radius: 14px;
+    padding: 15px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .action-btn:active { transform: scale(0.97); }
+  .action-btn:hover {
+    background: rgba(74,191,170,0.09);
+    border-color: rgba(74,191,170,0.35);
+  }
+  .action-btn i { font-size: 22px; color: #4ABFAA; }
+  .action-btn span {
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    text-align: center;
+    line-height: 1.35;
+  }
+  .action-btn.full-width {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+  .action-btn.full-width i { font-size: 19px; }
+  .action-btn.full-width span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+  }
+
+  /* WHATSAPP */
+  .wa-btn {
+    background: rgba(37,211,102,0.1);
+    border-color: rgba(37,211,102,0.25);
+  }
+  .wa-btn i { color: #25D366; }
+  .wa-btn:hover {
+    background: rgba(37,211,102,0.17);
+    border-color: rgba(37,211,102,0.45);
+  }
+
+  /* VCF */
+  .vcf-btn {
+    background: rgba(74,120,191,0.1);
+    border-color: rgba(74,120,191,0.28);
+  }
+  .vcf-btn i { color: #6B9FE4; }
+  .vcf-btn span { color: rgba(255,255,255,0.75); }
+  .vcf-btn:hover {
+    background: rgba(74,120,191,0.18);
+    border-color: rgba(74,120,191,0.45);
+  }
+
+  /* FOOTER */
+  .card-footer {
+    background: #060F1A;
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-web { font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 0.04em; }
+  .footer-web strong { color: rgba(255,255,255,0.5); font-weight: 400; }
+  .footer-address { font-size: 10px; color: rgba(255,255,255,0.18); text-align: right; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<div class="card-wrap">
+
+  <!-- TOP -->
+  <div class="card-top">
+    <!-- Logo Villalba by Kinstpan -->
+    <div class="logo-area">
+      <svg width="220" height="56" viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="35" font-family="'DM Sans', sans-serif" font-weight="500" font-size="31" letter-spacing="2.5" fill="#FFFFFF">VILLALBA</text>
+        <path d="M0 43 Q27 37 54 43 Q81 49 108 43 Q135 37 162 43 Q189 49 216 43" stroke="#1E7FD4" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <text x="2" y="55" font-family="'DM Sans', sans-serif" font-weight="300" font-size="10.5" letter-spacing="2" fill="rgba(255,255,255,0.42)">by Kinstpan</text>
+      </svg>
+    </div>
+
+    <div class="iso-badge">
+      <div class="iso-dot"></div>
+      ISO 9001 · Certificado
+    </div>
+
+    <div class="card-name">Gino Castillo Petruzzi</div>
+    <div class="card-role">Ejecutivo de Ventas · Zona Sur</div>
+    <div class="accent-line"></div>
+
+    <div class="trust-strip">
+      <i class="ti ti-shield-check"></i>
+      <span>Confianza en Aceros</span>
+    </div>
+  </div>
+
+  <!-- MID -->
+  <div class="card-mid">
+    <div class="territory">
+      <i class="ti ti-map-pin"></i>
+      Los Lagos &nbsp;·&nbsp; Aysén &nbsp;·&nbsp; Magallanes
+    </div>
+  </div>
+
+  <!-- ACCIONES -->
+  <div class="card-actions">
+    <a class="action-btn wa-btn" href="https://wa.me/56932135427">
+      <i class="ti ti-brand-whatsapp"></i>
+      <span>WhatsApp</span>
+    </a>
+    <a class="action-btn" href="tel:+56932135427">
+      <i class="ti ti-phone"></i>
+      <span>Llamar</span>
+    </a>
+    <a class="action-btn" href="https://www.villalba.cl/wp-content/uploads/2020/07/Catalogo-General-Productos-Villalba.pdf" target="_blank">
+      <i class="ti ti-book-2"></i>
+      <span>Catálogo Productos</span>
+    </a>
+    <a class="action-btn" href="https://www.villalba.cl/wp-content/uploads/2020/07/catalogo-Benchmark-chile.pdf" target="_blank">
+      <i class="ti ti-chart-bar"></i>
+      <span>Catálogo Benchmark</span>
+    </a>
+    <a class="action-btn full-width vcf-btn" href="#" onclick="downloadVCF(event)">
+      <i class="ti ti-user-plus"></i>
+      <span>Guardar Contacto</span>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="card-footer">
+    <div class="footer-web"><strong>www.villalba.cl</strong></div>
+    <div class="footer-address">Aeropuerto 9510<br>Cerrillos, Santiago</div>
+  </div>
+
+</div>
+
+<script>
+function downloadVCF(e) {
+  e.preventDefault();
+  var vcard = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'FN:Gino Castillo Petruzzi',
+    'N:Castillo Petruzzi;Gino;;;',
+    'ORG:Villalba by Kinstpan',
+    'TITLE:Ejecutivo de Ventas - Zona Sur',
+    'TEL;TYPE=CELL,VOICE:+56932135427',
+    'TEL;TYPE=WORK,VOICE:+56224122600',
+    'EMAIL;TYPE=WORK:televentas@villalba.cl',
+    'URL:https://www.villalba.cl',
+    'ADR;TYPE=WORK:;;Aeropuerto 9510;Santiago;RM;;Chile',
+    'NOTE:Zona de cobertura: Los Lagos - Aysén - Magallanes',
+    'END:VCARD'
+  ].join('\r\n');
+  var blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'Gino_Castillo_Villalba.vcf';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+
+</body>
+</html>
